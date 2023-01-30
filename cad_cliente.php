@@ -14,7 +14,7 @@
     </head>
 
     <body>
-    <!--<p> <a href="index.php"> INICIO </a> </p> -->
+ 
     <?php
         require 'navbar.php';
     ?>

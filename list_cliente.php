@@ -37,7 +37,8 @@
                             echo "<th> CPF </th>";
                             echo "<th> Email </th>";
                             echo "<th> Telefone </th>";
-                             echo "</tr>";  
+                            echo "<th> Ações </th>";
+                            echo "</tr>";  
 
                             //navega entre as linhas para preencher a tabela 
                             while($row = $res->fetch_object()){
@@ -49,13 +50,17 @@
                                 echo "<td> ".$row->cpf."</td>";
                                 echo "<td> ".$row->email."</td>";
                                 echo "<td> ".$row->telefone."</td>";
+                                echo "<td> 
+                                        <button class='btn btn-primary' onclick=\"location.href='edit_cliente.php?id_cliente=".$row->id_cliente."';\">Editar</button>
+                                        <button class='btn btn-danger' onclick=\"if(confirm('Tem certeza que deseja excluir?')){location.href='del_cliente.php?id_cliente=".$row->id_cliente."';}else{false;}\">Excluir</button>";
+
                                 echo "</tr>";  
                             }
                                 
                             echo " </table>";
 
                         }else{
-                            echo "<script> <p class='alert alert-danger'> Não foi encontrado resultados! </p> ";
+                            echo "<script> <p class='alert alert-danger'> Não foi encontrado resultados! </p> </script> ";
 
                         }
 
