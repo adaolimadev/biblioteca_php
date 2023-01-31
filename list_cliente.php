@@ -19,8 +19,8 @@
     <body>
     <?php require 'navbar.php'; require 'connection_mysql.php';?>
 
-
-        <div class="container " >
+        <br>        
+        <div class="container bg-light" >
             <div class ="row"> 
                 <div class = "col mt-5">
                   <h1>Lista de clientes cadastrados</h1>
@@ -37,7 +37,7 @@
                        //verifica se foi digitado algo no campo search
                        if (!empty($_GET['search'])) {
                         $data = $_GET['search'];
-                        $sql = "SELECT * FROM clientes WHERE id_cliente LIKE '%$data%' or nome LIKE '%$data%' or email LIKE '%$data%' ";
+                        $sql = "SELECT * FROM clientes WHERE id_cliente LIKE '%$data%' or nome LIKE '%$data%' or email LIKE '%$data%' or cpf LIKE '%$data%' ";
 
                        }else{
                         $sql = "SELECT * FROM clientes;";

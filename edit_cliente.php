@@ -28,7 +28,8 @@
         //busca resultado como um objeto e armazena em $row
         $row = $res-> fetch_object ();
     ?>
-         <div class="container">
+        <br>
+         <div class="container bg-light">
             <div class ="row"> 
                 <div class = "col mt-5">
                     <h1 >Edição de Cliente</h1>
@@ -37,8 +38,10 @@
                             <input type="hidden" name ="Xid_cliente" value ="<?php print $row->id_cliente; ?>">
                         <div class="form-group">
                                     <label >ID:</label>
+                                    <div id="emailHelp" class="form-text">O id não poderá ser alterado.</div>
                                     <input type="text" class="form-control" name="txtId_cliente" value="<?php print $row->id_cliente; ?>" readonly> <br>  
-                            </div>
+                                   
+                                </div>
 
                             <div class="form-group">
                                     <label >Nome:</label>
@@ -63,6 +66,7 @@
 
                             <div class="form-group">
                                 <label>Senha:</label>
+                                <div id="emailHelp" class="form-text">É necessário criar uma nova senha.</div>
                                 <input type="password" class="form-control" name="txtSenha" required ><br> 
                             </div>
 

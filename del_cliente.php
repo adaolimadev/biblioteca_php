@@ -7,12 +7,11 @@
     //Prepara o tratamento    
     $stmt = $conn->prepare("DELETE from clientes where id_cliente = ?");
     
-
     $stmt->bind_param("s", $id_cliente);
 
     if ($stmt->execute()) {
             echo "<script> alert ('Cliente excluido com sucesso!');
-            location.href='index.php'; </script>";
+            location.href='list_cliente.php'; </script>";
     } else {
     echo "<script> alert ('Erro ao excluir cliente: " .$stmt->error ."'); </script>";
     }

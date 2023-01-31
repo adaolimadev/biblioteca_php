@@ -1,9 +1,4 @@
-<?php
-
-?>
-
 <html>
-
     <head>
     <meta charset="utf-8">
         <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -14,13 +9,9 @@
     </head>
 
     <body>
- 
-    <?php
-        require 'navbar.php';
-    ?>
-
-
-         <div class="container">
+    <?php require 'navbar.php';?>
+        <br>
+         <div class="container bg-light">
             <div class ="row"> 
                 <div class = "col mt-5">
                     <h1 >Cadastro de Clientes</h1>

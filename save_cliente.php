@@ -1,6 +1,6 @@
 <?php
     require 'navbar.php';
-    require 'connection_mysql.php';
+    require_once 'connection_mysql.php';
 
     //Pegando as info do form e colocando em variáveis
     $nome = $_POST['txtNome'];
