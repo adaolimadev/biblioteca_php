@@ -14,7 +14,6 @@
     <?php require 'navbar.php';?>
 
         <div class="px-4 py-5 my-5 text-center bg-light">
-           
             <h1 class="display-5 fw-bold">Seja Bem vindo</h1><br>
             <div class="col-lg-6 mx-auto">
                 <p class="lead mb-4">Este é um sistema CRUD desenvolvido em PHP utilizando Banco de dados MySQL para consultas e armazenamento dos dados no back-end. Também foi utilizado Bootstrap para o front-end.</p>                   

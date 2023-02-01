@@ -32,8 +32,17 @@
                     Livro
                     </a>
                     <div class="dropdown-menu">
-                    <a class="dropdown-item" href="#">Cadastrar</a>
+                    <a class="dropdown-item" href="cad_livro.php">Cadastrar</a>
                     <a class="dropdown-item" href="#">Listar</a>
+                    </div>
+                </li>
+                <li class="nav-item dropdown">
+                    <a class="nav-link dropdown-toggle" href="#" role="button" data-toggle="dropdown" aria-expanded="false">
+                    Empréstimo
+                    </a>
+                    <div class="dropdown-menu">
+                    <a class="dropdown-item" href="#">Novo empréstimo</a>
+                    <a class="dropdown-item" href="#">Ver empréstimos</a>
                     </div>
                 </li>
                 </ul>

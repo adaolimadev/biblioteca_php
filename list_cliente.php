@@ -32,7 +32,7 @@
                     </svg>
                     </button><br>
                   </div>  
-
+                    
                     <?php  
                        //verifica se foi digitado algo no campo search
                        if (!empty($_GET['search'])) {
