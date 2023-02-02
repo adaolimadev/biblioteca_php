@@ -14,7 +14,9 @@
         <div class="container mt-4">
             <div class="row align-items-center">
                 <div class="col-md-10 mx-auto col-lg-5">
-                    <form action="testeLogin.php" class="p-4 p-md-5 border rounded-3 bg-light" method="POST">
+                    <h1 align="center" class="display-2" >BIBLIOTECA <br><img class=" mx-auto mb-4" src="https://www.svgrepo.com/show/373969/php2.svg" alt="" width="80" height="90">
+                   </h1>
+                       <form action="testeLogin.php" class="p-4 p-md-5 border rounded-3 bg-light" method="POST">
                         <div class="form-floating mb-3">
                             <input type="text" class="form-control" name="txtUser" id="txtUser" placeholder="Usuário">
                             <label for="txtUser">Usuário</label>

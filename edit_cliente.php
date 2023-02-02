@@ -75,7 +75,8 @@
                                 <label class="form-check-label">Sou estudante.</label> <br><br>
                             </div>
 
-                            <button type="submit" class="btn btn-primary">Enviar</button>
+                            <button type="submit" class="btn btn-primary">Atualizar Cadastro</button>
+                            <a  class="btn btn-danger" onclick="if(confirm('Tem certeza que deseja cancelar?')){location.href='index.php';}else{false;}">Cancelar</a>
                         </form>
                 </div>
             </div>  

@@ -8,7 +8,7 @@
         
 ?>
 
-<nav class="navbar navbar-expand-lg navbar-dark bg-primary">
+<nav class="navbar navbar-expand-lg navbar-dark bg-primary ">
             <a class="navbar-brand" href="index.php">BIBLIOTECA PHP</a>
             <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
                 <span class="navbar-toggler-icon"></span>
@@ -33,7 +33,7 @@
                     </a>
                     <div class="dropdown-menu">
                     <a class="dropdown-item" href="cad_livro.php">Cadastrar</a>
-                    <a class="dropdown-item" href="#">Listar</a>
+                    <a class="dropdown-item" href="list_livro.php">Listar</a>
                     </div>
                 </li>
                 <li class="nav-item dropdown">
@@ -49,7 +49,7 @@
             </div>
             <div class="d-flex ">
                 <span class="navbar-text me-5">User: <?php print_r($_SESSION['user']);?>  </span>
-                <a onclick="if(confirm('Tem certeza que deseja sair?')){location.href='sair.php';}else{false;}"  class="btn btn-danger me-5"> Sair </a>   
+                <a onclick="if(confirm('Tem certeza que deseja sair do sistema?')){location.href='action_livro.php?action=exit';}else{false;}"  class="btn btn-danger me-5"> Sair </a>   
             </div>
         </nav>
         <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>

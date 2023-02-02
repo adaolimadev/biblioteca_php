@@ -6,20 +6,19 @@
     <meta charset="utf-8">
         <meta name="viewport" content="width=device-width, initial-scale=1">
         <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-rbsA2VBKQhggwzxH7pPCaAqO46MgnOM80zW1RWuH61DGLwZJEdK2Kadq2F9CUG65" crossorigin="anonymous">
-       
         <title>Cadastrar Livro</title>
-        
     </head>
 
     <body>
     <?php require 'navbar.php';?>
+    
         <br>
          <div class="container bg-light">
             <div class ="row"> 
                 <div class = "col mt-5">
                     <h1 >Cadastro de Livros</h1>
 
-                        <form  action="action_livro.php?action=novo" method="POST" role="form">
+                        <form  action="action_livro.php?action=saveNew" method="POST" role="form">
                             <div class="form-group">
                                     <label for="inputTitulo">Título:</label>
                                     <input type="text" class="form-control" name="txtTitulo" id="inputTitulo"> <br>  
