@@ -1,6 +1,5 @@
 <?php 
     include_once 'connection_mysql.php';
-
     //echo "<br> Ação =".$_REQUEST['action']. "<br>";
     //echo "<br> ID =".$_REQUEST['id_livro']. "<br>";
 
@@ -15,7 +14,6 @@
             $ano = $_POST['txtAno'];
 
             $stmt = $conn->prepare("INSERT INTO livros (titulo, autor, editora, genero, ano) VALUES (?, ?, ?, ?, ?)");
-
             $stmt->bind_param("sssss", $titulo, $autor, $editora, $genero, $ano);
 
             if ($stmt->execute()) {
@@ -29,13 +27,12 @@
             } else {
                 echo "<script> alert ('Erro ao realizar cadastro:  " .$stmt->error ."');location.href='index.php'; </script>";
             }
-        
             $stmt->close();
             $conn->close();
             break;
 
         case "saveEdit": 
-            
+
             $id_livro = $_POST['txtId_livro'];
             $titulo = $_POST['txtTitulo'];
             $autor = $_POST['txtAutor'];
@@ -44,7 +41,6 @@
             $ano = $_POST['txtAno'];
 
             $stmt = $conn->prepare("UPDATE livros SET titulo = ?, autor = ?, editora = ?, genero = ?, ano = ? WHERE id_livro = ?; ");
-
             $stmt->bind_param("ssssss", $titulo, $autor, $editora, $genero, $ano, $id_livro);
 
             if ($stmt->execute()) {
@@ -53,19 +49,16 @@
             } else {
             echo "<script> alert ('Erro ao alterar cliente: " .$stmt->error ."'); </script>";
             }
-
             $stmt->close();
             $conn->close();
             break;
 
-        case "delete":    
+        case "delete":   
 
            // echo  "chegou no delete ID: ".$_REQUEST['id_livro']; ;
             $id_livro = $_REQUEST['id_livro']; 
-
             //Prepara o tratamento    
             $stmt = $conn->prepare("DELETE from livros where id_livro = ?");
-            
             $stmt->bind_param("s", $id_livro);
 
             if ($stmt->execute()) {
@@ -74,7 +67,6 @@
             } else {
             echo "<script> alert ('Erro ao excluir livro: " .$stmt->error ."'); </script>";
             }
-
             $stmt->close();
             $conn->close();
             break;    
@@ -88,7 +80,6 @@
             break; 
 
         default:
-
         echo "chegou nada!";
         //header('Location: index.php');
     }
