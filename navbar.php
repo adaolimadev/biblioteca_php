@@ -23,8 +23,8 @@
                     Cliente
                     </a>
                     <div class="dropdown-menu">
-                    <a class="dropdown-item" href="cad_cliente.php">Cadastrar</a>
-                    <a class="dropdown-item" href="list_cliente.php">Listar</a>
+                    <a class="dropdown-item" href="cad_cliente.php">Cadastrar Novo</a>
+                    <a class="dropdown-item" href="list_cliente.php">Listar Todos</a>
                     </div>
                 </li>
                 <li class="nav-item dropdown">
@@ -32,8 +32,8 @@
                     Livro
                     </a>
                     <div class="dropdown-menu">
-                    <a class="dropdown-item" href="cad_livro.php">Cadastrar</a>
-                    <a class="dropdown-item" href="list_livro.php">Listar</a>
+                    <a class="dropdown-item" href="cad_livro.php">Cadastrar Novo</a>
+                    <a class="dropdown-item" href="list_livro.php">Listar Todos</a>
                     </div>
                 </li>
                 <li class="nav-item dropdown">
@@ -41,7 +41,7 @@
                     Empréstimo
                     </a>
                     <div class="dropdown-menu">
-                    <a class="dropdown-item" href="#">Novo empréstimo</a>
+                    <a class="dropdown-item" href="list_livro_disp.php">Novo empréstimo</a>
                     <a class="dropdown-item" href="#">Ver empréstimos</a>
                     </div>
                 </li>

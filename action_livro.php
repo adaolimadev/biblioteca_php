@@ -13,10 +13,10 @@
             $genero = $_POST['txtGenero'];
             $ano = $_POST['txtAno'];
 
-            $stmt = $conn->prepare("INSERT INTO livros (titulo, autor, editora, genero, ano) VALUES (?, ?, ?, ?, ?)");
+            $stmt = $conn->prepare("INSERT INTO livros (titulo, autor, editora, genero, ano, disponivel) VALUES (?, ?, ?, ?, ?, true)");
             $stmt->bind_param("sssss", $titulo, $autor, $editora, $genero, $ano);
 
-            if ($stmt->execute()) {
+            if($stmt->execute()){
                     echo "<script>
                      if (confirm ('Livro cadastrado com sucesso! Deseja cadastrar outro livro? ')){
                         location.href='cad_livro.php';
@@ -24,7 +24,7 @@
                         location.href='index.php';
                      } 
                      </script>";
-            } else {
+            }else{
                 echo "<script> alert ('Erro ao realizar cadastro:  " .$stmt->error ."');location.href='index.php'; </script>";
             }
             $stmt->close();
@@ -43,10 +43,10 @@
             $stmt = $conn->prepare("UPDATE livros SET titulo = ?, autor = ?, editora = ?, genero = ?, ano = ? WHERE id_livro = ?; ");
             $stmt->bind_param("ssssss", $titulo, $autor, $editora, $genero, $ano, $id_livro);
 
-            if ($stmt->execute()) {
+            if($stmt->execute()){
                     echo "<script> alert ('Livro alterado com sucesso!');
                     location.href='list_livro.php'; </script>";
-            } else {
+            }else{
             echo "<script> alert ('Erro ao alterar cliente: " .$stmt->error ."'); </script>";
             }
             $stmt->close();
@@ -61,15 +61,24 @@
             $stmt = $conn->prepare("DELETE from livros where id_livro = ?");
             $stmt->bind_param("s", $id_livro);
 
-            if ($stmt->execute()) {
+            if($stmt->execute()){
                     echo "<script> alert ('Livro excluido com sucesso!');
                     location.href='list_livro.php'; </script>";
-            } else {
+            }else{
             echo "<script> alert ('Erro ao excluir livro: " .$stmt->error ."'); </script>";
             }
             $stmt->close();
             $conn->close();
-            break;    
+            break;  
+            
+            case "newEmp":
+                $id_livro = $_POST['txtId_livro']; 
+                $id_cliente = $_POST['txtId_cliente']; 
+                echo "chegou no newEmp";
+                echo "<br> id livro: ".$id_livro;
+                echo "<br> id cliente: ".$id_cliente;
+
+                break;
 
             case "exit":
                 //destroi a sessão e redireciona para o login

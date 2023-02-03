@@ -6,7 +6,7 @@ email varchar (50) NOT NULL,
 telefone varchar (20),
 PRIMARY KEY (id_cliente) );
 
-INSERT INTO clientes( nome, cpf, email, telefone) values ('Adão', '1111111111', 'teste@teste', '2222222222')
+INSERT INTO clientes( nome, cpf, email, telefone) values ('Adão', '09292240943', 'teste@teste', '4199846305')
 
 drop table clientes
 
@@ -35,10 +35,17 @@ titulo varchar(50) not null,
 autor varchar (50) not null,
 editora varchar (50) not null,
 genero varchar (50) not null,
-ano varchar (50) not null,
+ano int not null,
+disponivel boolean not null,
 PRIMARY KEY (id_livro)
 );
 
+
+INSERT INTO livros ( titulo , autor , editora , genero , ano, disponivel) values ('A Bíblia', 'Discípulos', 'Céu', 'Religioso', 0000, true );
+
+INSERT INTO livros  values (2, 'O Segredo', 'Sei lá', 'Pode ser', 'Suspense', 2012, true );
+
+UPDATE livros  SET disponivel = false where id_livro = 5;
 
 drop table livros 
 
@@ -46,3 +53,8 @@ select * from livros
 
 INSERT INTO LIVROS 
 
+
+CREATE TABLE emprestimos (
+id_emprestimo
+
+);
