@@ -16,8 +16,13 @@
 
     if ($stmt->execute()) {
         //echo "<br> <h1> Dados inseridos com sucesso! </h1>";
-            echo "<script> alert ('Cadastro realizado com sucesso!');
-            location.href='index.php'; </script>";
+            echo "<script>
+            if (confirm ('Cliente cadastrado com sucesso! Deseja cadastrar outro cliente? ')){
+               location.href='cad_cliente.php';
+           }else{
+               location.href='list_cliente.php';
+            } 
+            </script>";
     } else {
         //echo "<br> <h1> Erro ao inserir dados: <h1>" . $stmt->error;
     echo "<script> alert ('Erro ao realziar cadastro:  " .$stmt->error ."'); </script>";

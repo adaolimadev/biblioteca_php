@@ -22,16 +22,13 @@
         if($result->num_rows >0){
             while($linha = mysqli_fetch_assoc($result)){
                 $id_livro = $linha['id_livro'];
-                $titulo = $linha['titulo'];
-                $autor = $linha['autor'];
-                $editora = $linha['editora'];
-                $genero = $linha['genero'];
-                $ano = $linha['ano'];    
+                $titulo = $linha['titulo'];   
             }
             
         }else{
             echo "<script> <p class='alert alert-danger'> Livro não encontrado! </p>; location.href='index.php'; </script> ";
         }
+
     ?>
         <br>
         <div class="container bg-light">
@@ -53,6 +50,10 @@
                                     <label for="inputAutor">ID do cliente:</label>
                                     <div id="emailHelp" class="form-text"><strong> Inserir ID do cliente que deseja emprestar: </strong></div>
                                     <input type="text" class="form-control" name="txtId_cliente" id="inputAutor" > <br>  
+                            </div>
+                            <div class="form-group">
+                                    <label for="inputAutor">Observações:</label>
+                                    <input type="text" class="form-control" name="txtObs" id="inputObs" > <br>  
                             </div>
                             <button type="submit" class="btn btn-primary">Emprestar</button>
                             <a  class="btn btn-danger" onclick="if(confirm('Tem certeza que deseja cancelar?')){location.href='index.php';}else{false;}">Cancelar</a>

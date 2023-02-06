@@ -22,12 +22,13 @@
             <div class = "col mt-5">
                 <h1 class="text-center" >Lista de Livros</h1><br>
                 <div class ="box-search">
+                <a class ="btn btn-success" href="cad_livro.php">Novo Livro</a> 
                     <input type="search" class="form-control w-25" placeholder="Pesquisar" id="pesquisar" >
                     <button class="btn btn-primary" onclick="searchData()"> <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-search" viewBox="0 0 16 16">
                     <path d="M11.742 10.344a6.5 6.5 0 1 0-1.397 1.398h-.001c.03.04.062.078.098.115l3.85 3.85a1 1 0 0 0 1.415-1.414l-3.85-3.85a1.007 1.007 0 0 0-.115-.1zM12 6.5a5.5 5.5 0 1 1-11 0 5.5 5.5 0 0 1 11 0z"/>
                     </svg>
                     </button><br>
-                  </div>  
+                  </div>  <br>
                 <table class="table table-hover text-center">
                     <thead>
                         <tr>
@@ -44,14 +45,13 @@
                     <tbody> 
                         <?php 
                             include_once 'connection_mysql.php';
-                            
-
+                
                             if(!empty($_GET['search'])){
                                 $data = $_GET['search'];
                                 $sql = "SELECT * FROM livros WHERE id_livro LIKE '%$data%' or titulo LIKE '%$data%' or autor LIKE '%$data%' or genero LIKE '%$data%' 
                                 or editora LIKE '%$data%' or ano LIKE '%$data%' ";
                             }else{
-                                    $sql = "SELECT * FROM livros;";
+                                    $sql = "SELECT * FROM livros ORDER BY 1 DESC;";
                             }
 
                             $result = $conn->query($sql);

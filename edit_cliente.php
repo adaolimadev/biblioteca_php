@@ -1,9 +1,7 @@
 <?php
 
 ?>
-
 <html>
-
     <head>
     <meta charset="utf-8">
         <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -12,7 +10,6 @@
         <title>Editar Cliente</title>
         
     </head>
-
     <body>
    
     <?php
@@ -40,41 +37,32 @@
                                     <label >ID:</label>
                                     <div id="emailHelp" class="form-text">O id não poderá ser alterado.</div>
                                     <input type="text" class="form-control" name="txtId_cliente" value="<?php print $row->id_cliente; ?>" readonly> <br>  
-                                   
                                 </div>
-
                             <div class="form-group">
                                     <label >Nome:</label>
                                     <input type="text" class="form-control" name="txtNome" value="<?php print $row->nome;?>"> <br>  
                             </div>
-
                             <div class="form-group">
                                 <label>Email:</label>
                                 <input type="email" class="form-control" name="txtEmail" value="<?php print $row->email;?>"> <br>
-                            
                             </div>
-
                             <div class="form-group">
                                     <label>CPF:</label>
                                     <input type="text" class="form-control"  name="txtCpf" value="<?php print $row->cpf;?>"> <br>  
                             </div>
-
                             <div class="form-group">
                                     <label>Telefone:</label>
                                     <input type="text" class="form-control"  name="txtTelefone" value="<?php print $row->telefone;?>"> <br>  
                             </div>
-
                             <div class="form-group">
                                 <label>Senha:</label>
                                 <div id="emailHelp" class="form-text">É necessário criar uma nova senha.</div>
                                 <input type="password" class="form-control" name="txtSenha" required ><br> 
                             </div>
-
                             <div class="form-group form-check">
                                 <input type="checkbox" class="form-check-input" >
                                 <label class="form-check-label">Sou estudante.</label> <br><br>
                             </div>
-
                             <button type="submit" class="btn btn-primary">Atualizar Cadastro</button>
                             <a  class="btn btn-danger" onclick="if(confirm('Tem certeza que deseja cancelar?')){location.href='index.php';}else{false;}">Cancelar</a>
                         </form>

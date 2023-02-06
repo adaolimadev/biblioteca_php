@@ -4,9 +4,10 @@ nome varchar (50) NOT NULL,
 cpf varchar (20) NOT NULL UNIQUE,
 email varchar (50) NOT NULL,
 telefone varchar (20),
+senha varchar (50),
 PRIMARY KEY (id_cliente) );
 
-INSERT INTO clientes( nome, cpf, email, telefone) values ('Adão', '09292240943', 'teste@teste', '4199846305')
+INSERT INTO clientes( nome, cpf, email, telefone) values ('Adão', '1111111', 'adao@teste.com', '1111111');
 
 drop table clientes
 
@@ -41,20 +42,43 @@ PRIMARY KEY (id_livro)
 );
 
 
-INSERT INTO livros ( titulo , autor , editora , genero , ano, disponivel) values ('A Bíblia', 'Discípulos', 'Céu', 'Religioso', 0000, true );
+UPDATE livros set disponivel = true where id_livro IN (4,5);
 
-INSERT INTO livros  values (2, 'O Segredo', 'Sei lá', 'Pode ser', 'Suspense', 2012, true );
+INSERT INTO livros ( titulo , autor , editora , genero , ano, disponivel) values ('A Bíblia', 'Discípulos', 'Céu', 'Religioso', 1 );
+INSERT INTO livros ( titulo , autor , editora , genero , ano, disponivel) values ('A copa', 'Discípulos', 'Céu', 'Religioso', 1 );
+INSERT INTO livros ( titulo , autor , editora , genero , ano, disponivel) values ('A Bíblia', 'Discípulos', 'Céu', 'Religioso', 1 );
+INSERT INTO livros ( titulo , autor , editora , genero , ano, disponivel) values ('A Bíblia', 'Discípulos', 'Céu', 'Religioso', 1 );
 
-UPDATE livros  SET disponivel = false where id_livro = 5;
 
 drop table livros 
 
 select * from livros
 
-INSERT INTO LIVROS 
-
-
+-------
 CREATE TABLE emprestimos (
-id_emprestimo
+id_emprestimo INT AUTO_INCREMENT PRIMARY KEY,
+id_cliente INT,
+id_livro INT,
+data_emprestimo date,
+obs varchar(50),
+CONSTRAINT fk_cliente FOREIGN KEY (id_cliente) REFERENCES clientes(id_cliente),
+CONSTRAINT fk_livro FOREIGN KEY (id_livro) REFERENCES livros(id_livro));
 
-);
+INSERT INTO emprestimos (id_cliente, id_livro,data_emprestimo, obs) values ( 5, 5,CURRENT_TIMESTAMP ,'Emprestado por 3 dias');
+
+selecT * from emprestimos;
+
+select * from livros
+
+drop table clientes;
+drop table livros;
+drop table emprestimos;
+
+drop table emprestimos;
+
+CREATE OR REPLACE VIEW vwEmprestimos AS 
+SELECT emp.id_emprestimo cod, emp.id_cliente id_cliente, cli.nome cliente, emp.id_livro id_livro, liv.titulo livro, emp.data_emprestimo data, emp.obs obs
+FROM emprestimos emp, clientes cli, livros liv
+WHERE emp.id_cliente = cli.id_cliente AND emp.id_livro = liv.id_livro ;
+
+select * from vwEmprestimos

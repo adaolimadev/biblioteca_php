@@ -71,23 +71,72 @@
             $conn->close();
             break;  
             
-            case "newEmp":
-                $id_livro = $_POST['txtId_livro']; 
-                $id_cliente = $_POST['txtId_cliente']; 
-                echo "chegou no newEmp";
-                echo "<br> id livro: ".$id_livro;
-                echo "<br> id cliente: ".$id_cliente;
+        case "newEmp":
+            // echo "chegou no newEmp";
+            // echo "<br> id livro: ".$id_livro;
+            // echo "<br> id cliente: ".$id_cliente;
+            $id_livro = $_POST['txtId_livro']; 
+            $id_cliente = $_POST['txtId_cliente']; 
+            $obs = $_POST['txtObs'];
 
+
+            $sqlCliente = "SELECT id_cliente FROM clientes WHERE id_cliente = ".$id_cliente;
+            $res = $conn->query($sqlCliente);
+            $qtd = $res->num_rows;
+
+            if($qtd >0){
+                //Alterar Status do Livro
+                $sqlDispLivro = "UPDATE livros set disponivel = false where id_livro =".$id_livro.";";
+                $res = $conn->query($sqlDispLivro);
+
+                //Adicionar uma linha a tabela Emprestimos com id_cliente e id_livro
+                $stmt = $conn->prepare("INSERT INTO emprestimos (id_cliente, id_livro,data_emprestimo, obs) values (?,?,CURRENT_TIMESTAMP,?);" );
+                
+                $stmt->bind_param("sss", $id_cliente, $id_livro, $obs);
+                if ($stmt->execute()) {
+                        echo "<script> alert ('Cadastro de empréstimo realizado com sucesso!');
+                        location.href='list_emprestimo.php'; </script>";
+                }else{
+                echo "<script> alert ('Erro ao realziar cadastro:  " .$stmt->error ."'); </script>";
+                 }
+                 $stmt->close();
+            }else{
+                echo "<script> alert('Atenção! Cliente não encontrado! Insira um ID válido!');
+                     location.href='cad_emprestimo.php?id_livro=".$id_livro."'
+                    </script>";
+                }
+                $conn->close();
                 break;
 
-            case "exit":
+        case "devolver":
+            $id_emprestimo = $_REQUEST['id_emprestimo'];
+            $id_livro = $_REQUEST['id_livro'];
+            echo "Chegou no devolver: ";
+            echo "<br> chegou ID EMPRESTIMO:  ".$id_emprestimo;
+            echo "<br> chegou ID LIVRO:  ".$id_livro;
+
+            $stmt = $conn->prepare("DELETE FROM emprestimos WHERE id_emprestimo = ?");
+
+            $stmt->bind_param("s", $id_emprestimo);
+            if($stmt->execute()){
+                
+                $sqlDispLivro = "UPDATE livros set disponivel = true where id_livro =".$id_livro.";";
+                $res = $conn->query($sqlDispLivro);
+                echo "<script> alert ('Empréstimo devolvido com sucesso!');
+                    location.href='list_emprestimo.php'; </script>";
+            }else{
+                echo "<script> alert ('Erro ao devolver emprestimo:  " .$stmt->error ."'); </script>";
+            }
+
+            break;
+        case "exit":
                 //destroi a sessão e redireciona para o login
                 session_start();
                 unset($_SESSION['user']);
                 unset($_SESSION['pass']);
                 header('Location: login.php');
             break; 
-
+        
         default:
         echo "chegou nada!";
         //header('Location: index.php');

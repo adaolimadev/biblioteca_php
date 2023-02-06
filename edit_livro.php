@@ -67,7 +67,7 @@
                                     <input type="number" class="form-control" name="txtAno" id="inputAno" value="<?php echo $ano?>"> <br>  
                             </div>
                             <button type="submit" class="btn btn-primary">Atualizar Cadastro</button>
-                            <a  class="btn btn-danger" onclick="if(confirm('Tem certeza que deseja cancelar?')){location.href='index.php';}else{false;}">Cancelar</a>
+                            <a  class="btn btn-danger" onclick="if(confirm('Tem certeza que deseja cancelar?')){location.href='list_livro.php';}else{false;}">Cancelar</a>
                         </form>
                 </div>
             </div>  

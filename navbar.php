@@ -18,32 +18,20 @@
                 <li class="nav-item active">
                     <a class="nav-link" href="index.php">Home</a>
                 </li>
-                <li class="nav-item dropdown">
-                    <a class="nav-link dropdown-toggle" href="#" role="button" data-toggle="dropdown" aria-expanded="false">
-                    Cliente
+                <li class="nav-item">
+                    <a class="nav-link " href="list_cliente.php" role="button">
+                    Clientes
                     </a>
-                    <div class="dropdown-menu">
-                    <a class="dropdown-item" href="cad_cliente.php">Cadastrar Novo</a>
-                    <a class="dropdown-item" href="list_cliente.php">Listar Todos</a>
-                    </div>
                 </li>
-                <li class="nav-item dropdown">
-                    <a class="nav-link dropdown-toggle" href="#" role="button" data-toggle="dropdown" aria-expanded="false">
-                    Livro
+                <li class="nav-item">
+                    <a class="nav-link " href="list_livro.php" role="button">
+                    Livros
                     </a>
-                    <div class="dropdown-menu">
-                    <a class="dropdown-item" href="cad_livro.php">Cadastrar Novo</a>
-                    <a class="dropdown-item" href="list_livro.php">Listar Todos</a>
-                    </div>
                 </li>
-                <li class="nav-item dropdown">
-                    <a class="nav-link dropdown-toggle" href="#" role="button" data-toggle="dropdown" aria-expanded="false">
-                    Empréstimo
+                <li class="nav-item">
+                    <a class="nav-link " href="list_emprestimo.php" role="button">
+                    Empréstimos
                     </a>
-                    <div class="dropdown-menu">
-                    <a class="dropdown-item" href="list_livro_disp.php">Novo empréstimo</a>
-                    <a class="dropdown-item" href="#">Ver empréstimos</a>
-                    </div>
                 </li>
                 </ul>
             </div>

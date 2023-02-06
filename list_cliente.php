@@ -16,18 +16,18 @@
     <?php require 'navbar.php'; require 'connection_mysql.php';?>
 
         <br>        
-        <div class="container bg-light" >
+        <div class="container bg-light text-center" >
             <div class ="row"> 
                 <div class = "col mt-5">
-                  <h1>Lista de clientes cadastrados</h1>
-                
+                  <h1>Lista de clientes cadastrados</h1><br>
                   <div class ="box-search">
+                  <a class ="btn btn-success" href="cad_cliente.php">Novo Cliente</a> <br>
                     <input type="search" class="form-control w-25" placeholder="Pesquisar" id="pesquisar" >
                     <button class="btn btn-primary" onclick="searchData()"> <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-search" viewBox="0 0 16 16">
                     <path d="M11.742 10.344a6.5 6.5 0 1 0-1.397 1.398h-.001c.03.04.062.078.098.115l3.85 3.85a1 1 0 0 0 1.415-1.414l-3.85-3.85a1.007 1.007 0 0 0-.115-.1zM12 6.5a5.5 5.5 0 1 1-11 0 5.5 5.5 0 0 1 11 0z"/>
                     </svg>
-                    </button><br>
-                  </div>  
+                    </button>
+                  </div> <br>
                     
                     <?php  
                        //verifica se foi digitado algo no campo search
@@ -43,7 +43,7 @@
                        $qtd = $res->num_rows;
 
                         if($qtd >0){
-                            echo " <table class='table table-hover' >";
+                            echo " <table class='table table-hover text-center' >";
                             //cria o cabeçalho da tabela
                             echo "<tr>"; 
                             echo "<th> # </th>";
