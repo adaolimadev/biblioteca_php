@@ -18,7 +18,7 @@
                 <div class = "col mt-5">
                     <h1 >Cadastro de Livros</h1>
 
-                        <form  action="action_livro.php?action=saveNew" method="POST" role="form">
+                        <form  action="actions.php?action=save_livro" method="POST" role="form">
                             <div class="form-group">
                                     <label for="inputTitulo">Título:</label>
                                     <input type="text" class="form-control" name="txtTitulo" id="inputTitulo"> <br>  

@@ -31,7 +31,7 @@
                 <div class = "col mt-5">
                     <h1 >Edição de Cliente</h1>
 
-                        <form  action="save_edit_cliente.php" method="POST" role="form">
+                        <form  action="actions.php?action=saveEdit_cliente" method="POST" role="form">
                             <input type="hidden" name ="Xid_cliente" value ="<?php print $row->id_cliente; ?>">
                         <div class="form-group">
                                     <label >ID:</label>

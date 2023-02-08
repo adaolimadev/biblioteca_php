@@ -12,13 +12,20 @@
         <div class="container bg-light">
             <div class ="row"> 
                 <div class = "col mt-5">
-                    <h1 >Emprestar Livro</h1>
+                    <h1 >Detalhes do Emprestimo</h1>
 
-                        <form  action="actions.php?action=save_emp" method="POST" role="form">
-                            <?php   require 'connection_mysql.php';  
-                               //recebe o array de livros
-                                $livros = isset($_POST['ckLivros']) ?  $livros = $_POST['ckLivros'] : null;
+                    <?php   require 'connection_mysql.php';  
+                               $id_emp = $_REQUEST['id_emp'];?>
 
+                    <div class="form-group">
+                            <label for="inputAutor">COD Emprestimo:</label>
+                             <input type="text" class="form-control" name="txtId_cliente" id="inputAutor" value = "<?php print_r($_REQUEST['id_emp']);?>" disabled> <br>  
+                    </div>
+                        
+                               <?php
+
+                               //Fazer select puxando do BD os livros associados a este emprestimo e preencher o form
+                                
                                 //verifica se não é nulo
                                if($livros !== null){
                                     $numLivros = 1;
@@ -40,24 +47,16 @@
                                         $numLivros++;
                                     }
                                     $conn->close();
-                               }else{
-                                //Se o array vier vazio, avisa e redireciona para a tela anterior
-                                echo "<script> alert ('Atenção selecione pelo menos um livro!');
-                                location.href='list_livro_disp.php'; </script>";
-                               }      
+                               }    
                             ?>
-                            <div class="form-group">
-                                    <label for="inputAutor">ID do cliente:</label>
-                                    <div id="emailHelp" class="form-text"><strong> Inserir ID do cliente que deseja emprestar: </strong></div>
-                                    <input type="text" class="form-control" name="txtId_cliente" id="inputAutor" > <br>  
-                            </div>
+                            
                             <div class="form-group">
                                     <label for="inputAutor">Observações:</label>
                                     <input type="text" class="form-control" name="txtObs" id="inputObs" > <br>  
                             </div>
-                            <button type="submit" class="btn btn-primary">Emprestar</button>
-                            <a  class="btn btn-danger" onclick="if(confirm('Tem certeza que deseja cancelar?')){location.href='index.php';}else{false;}">Cancelar</a>
-                        </form>
+                            
+                            <a class="btn btn-danger"  href="list_emprestimo.php" >Voltar</a>
+                        
                 </div>
             </div>  
          </div>

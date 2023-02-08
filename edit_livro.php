@@ -39,7 +39,7 @@
                 <div class = "col mt-5">
                     <h1 >Editar Livro</h1>
 
-                        <form  action="action_livro.php?action=saveEdit" method="POST" role="form">
+                        <form  action="actions.php?action=saveEdit_livro" method="POST" role="form">
                              <div class="form-group">
                                     <label for="inputTitulo">ID:</label>
                                     <div id="emailHelp" class="form-text">O id não poderá ser alterado.</div>

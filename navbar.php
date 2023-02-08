@@ -37,7 +37,7 @@
             </div>
             <div class="d-flex ">
                 <span class="navbar-text me-5">User: <?php print_r($_SESSION['user']);?>  </span>
-                <a onclick="if(confirm('Tem certeza que deseja sair do sistema?')){location.href='action_livro.php?action=exit';}else{false;}"  class="btn btn-danger me-5"> Sair </a>   
+                <a onclick="if(confirm('Tem certeza que deseja sair do sistema?')){location.href='actions.php?action=exit';}else{false;}"  class="btn btn-danger me-5"> Sair </a>   
             </div>
         </nav>
         <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>

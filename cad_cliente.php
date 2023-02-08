@@ -16,7 +16,7 @@
                 <div class = "col mt-5">
                     <h1 >Cadastro de Clientes</h1>
 
-                        <form  action="save_cliente.php" method="POST" role="form">
+                        <form  action="actions.php?action=save_cliente" method="POST" role="form">
                             <div class="form-group">
                                     <label for="exampleInputEmail1">Nome:</label>
                                     <input type="text" class="form-control" name="txtNome"> <br>  
